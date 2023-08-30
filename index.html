@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miniräknare</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="calculator" id="calculator">
+        <div class="display-container" id="displayContainer">
+            <div style="display: inline-block;">
+                <p id = "display" class="display"></p>
+            </div>
+        </div>
+        <div class="btns-container">
+            <button class="calculator-btn" id = "btnEscape" onclick = "Clear()">C</button>
+            <button class="calculator-btn" id = "btn(" onclick="AddNumber('&#40;')">&#40;</button>
+            <button class="calculator-btn" id = "btn)" onclick="AddNumber('&#41;')">&#41;</button>
+            <button class="calculator-btn" id = "btnBackspace" onclick = "Backspace()">B</button>
+            <button class="calculator-btn number-btn" id = "btn7" onclick = "AddNumber(7)">7</button>
+            <button class="calculator-btn number-btn" id = "btn8" onclick = "AddNumber(8)">8</button>
+            <button class="calculator-btn number-btn" id = "btn9" onclick = "AddNumber(9)">9</button>
+            <button class="calculator-btn" id = "btn/" onclick = "AddOperator('/')">/</button>
+            <button class="calculator-btn number-btn" id = "btn4" onclick = "AddNumber(4)">4</button>
+            <button class="calculator-btn number-btn" id = "btn5" onclick = "AddNumber(5)">5</button>
+            <button class="calculator-btn number-btn" id = "btn6" onclick = "AddNumber(6)">6</button>
+            <button class="calculator-btn" id = "btn*" onclick = "AddOperator('*')">*</button>
+            <button class="calculator-btn number-btn" id = "btn1" onclick = "AddNumber(1)">1</button>
+            <button class="calculator-btn number-btn" id = "btn2" onclick = "AddNumber(2)">2</button>
+            <button class="calculator-btn number-btn" id = "btn3" onclick = "AddNumber(3)">3</button>
+            <button class="calculator-btn" id = "btn-" onclick = "AddOperator('-')">-</button>
+            <button class="calculator-btn equal-btn" id = "btnEnter" onclick="Calculate()">=</button>
+            <button class="calculator-btn number-btn" id = "btn0" onclick = "AddNumber(0)">0</button>
+            <button class="calculator-btn number-btn" id = "btn." onclick = "AddDecimal()">.</button>
+            <button class="calculator-btn" id = "btn+" onclick = "AddOperator('+')">+</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="style.js"></script>
+</body>
+</html>
+
+<!--Lägg till ikon-->
+<!--Fixa backspace symbol-->
+<!--Lägg till ^-knapp-->
+<!--Lägg till pi-knapp-->
+<!--Lägg till minnesfunktion-->
+<!--Fixa bugg som gör att vissa knappar fastnar i aktivt läga om man släpper skiftknappen-->

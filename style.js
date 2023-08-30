@@ -1,0 +1,55 @@
+let displayFontStage = 0;
+
+document.getElementById("displayContainer").style.width = document.getElementById("calculator").clientWidth - 30;
+
+
+function AdjustFontSize() {
+    const containerWidth = document.getElementById("displayContainer").clientWidth;
+    if (display.clientWidth > containerWidth - 20) {
+        if (displayFontStage < 2) {
+            displayFontStage ++;
+        } else { Backspace(); }
+    }
+    if ((display.clientWidth < containerWidth * 0.61
+            && displayFontStage === 1)
+        || (display.clientWidth < containerWidth * 0.67
+            && displayFontStage === 2)) {
+        displayFontStage --;
+    }
+    if (displayFontStage === 0) { display.style.fontSize = "40px" }
+    if (displayFontStage === 1) { display.style.fontSize = "25px" }
+    if (displayFontStage === 2) { display.style.fontSize = "17px" }
+    if (display.clientHeight >= 50) { Backspace(); }
+    console.log("Text width:",display.clientWidth,"Font size:",displayFontStage);
+}
+
+const displayElement = document.getElementById('display');
+function handleDisplayChange(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+            AdjustFontSize()
+        }
+    }
+}
+const observer = new MutationObserver(handleDisplayChange);
+const config = { childList: true, subtree: true };
+observer.observe(displayElement, config);
+
+
+document.addEventListener("keydown", function(event) {
+    const key = event.key;
+    if (keyMap.hasOwnProperty(key)) {
+        event.preventDefault();
+
+        // Make keypresses visual
+        document.getElementById("btn"+key).classList.add('active');
+    }
+});
+
+// Deactivate buttons when the key is not pressed
+document.addEventListener("keyup", function(event) {
+    const key = event.key;
+    if (keyMap.hasOwnProperty(key)) {
+        document.getElementById("btn"+key).classList.remove("active");
+    }
+});
