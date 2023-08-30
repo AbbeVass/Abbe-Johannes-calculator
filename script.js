@@ -51,7 +51,7 @@ function AddDecimal() {
 
     if (isDecimalAllowed()) {
         ClearError();
-        document.getElementById("display").textContent += "."
+        document.getElementById("display").textContent += ".";
     }
 }
 
