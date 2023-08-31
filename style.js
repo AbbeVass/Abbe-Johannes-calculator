@@ -5,7 +5,7 @@ document.getElementById("displayContainer").style.width = document.getElementByI
 
 function AdjustFontSize() {
     const containerWidth = document.getElementById("displayContainer").clientWidth;
-    if (display.clientWidth > containerWidth - 20) {
+    if (display.clientWidth > containerWidth - 21) {
         if (displayFontStage < 2) {
             displayFontStage ++;
         } else { Backspace(); }
@@ -20,10 +20,9 @@ function AdjustFontSize() {
     if (displayFontStage === 1) { display.style.fontSize = "25px" }
     if (displayFontStage === 2) { display.style.fontSize = "17px" }
     if (display.clientHeight >= 50) { Backspace(); }
-    console.log("Text width:",display.clientWidth,"Font size:",displayFontStage);
+    console.log("Container width:",containerWidth,"Text width:",display.clientWidth,"Font size:",displayFontStage);
 }
 
-const displayElement = document.getElementById('display');
 function handleDisplayChange(mutationsList, observer) {
     for (const mutation of mutationsList) {
         if (mutation.type === 'childList') {
@@ -33,7 +32,7 @@ function handleDisplayChange(mutationsList, observer) {
 }
 const observer = new MutationObserver(handleDisplayChange);
 const config = { childList: true, subtree: true };
-observer.observe(displayElement, config);
+observer.observe(display, config);
 
 
 document.addEventListener("keydown", function(event) {
