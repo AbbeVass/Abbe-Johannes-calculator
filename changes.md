@@ -1,6 +1,5 @@
 # Abbe-Johannes-calculator
 
-• Lägg till ikon
 • Fixa backspace symbol
 • Lägg till ^-knapp
 • Lägg till pi-knapp
