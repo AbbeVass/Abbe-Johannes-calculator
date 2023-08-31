@@ -1,7 +1,7 @@
 let piAdded = false;
+const display = document.getElementById("display");
 
 function isDecimalAllowed() {
-    const display = document.getElementById("display");
     const displayText = display.textContent.trim();
     const lastOperatorIndex = Math.max(
         displayText.lastIndexOf("+"),
@@ -19,15 +19,14 @@ function isDecimalAllowed() {
 function AddNumber(Number) {
     ClearError();
     if (Number === "PI" && isDecimalAllowed()) {
-        document.getElementById("display").textContent += 3.14;
+        display.textContent += 3.14;
     } else if (Number !== "PI") {
-        document.getElementById("display").textContent += Number;
+        display.textContent += Number;
     }
 }
 
 function AddOperator(Operator) {
     ClearError();
-    const display = document.getElementById("display");
     const displayText = display.textContent.trim();
     piAdded = false
     if (displayText !== "" || Operator == "-") {
@@ -49,7 +48,6 @@ function AddOperator(Operator) {
 
 
 function AddDecimal() {
-    const display = document.getElementById("display");
     const displayText = display.textContent.trim();
 
     if (isDecimalAllowed()) {
@@ -59,7 +57,6 @@ function AddDecimal() {
 }
 
 function Calculate() {
-    const display = document.getElementById("display");
     const displayText = display.textContent.trim();
 
     try {
@@ -82,14 +79,12 @@ function Calculate() {
 
 function Clear() {
     ClearError();
-    const display = document.getElementById("display");
     display.textContent = "";
     piAdded = false; // Reset piAdded when clearing
 }
 
 function Backspace() {
     ClearError();
-    const display = document.getElementById("display");
     let displayText = display.textContent;
 
     if (displayText.length > 0) {
@@ -105,7 +100,6 @@ function Backspace() {
 }
 
 function ClearError() {
-    const display = document.getElementById("display");
     const errorMessages = ["Error", "Division By Zero", "Invalid Calculation", "Syntax Error", "Is Not A Function"];
     const displayText = display.textContent.toLowerCase();
 
@@ -145,7 +139,7 @@ document.addEventListener("keydown", function(event) {
     const key = event.key;
     if (keyMap.hasOwnProperty(key)) {
         const calculatorFunction = keyMap[key];
-        if (!(key === "Enter" && document.getElementById("display").textContent === "Error")) {
+        if (!(key === "Enter" && display.textContent === "Error")) {
             eval(calculatorFunction);
         }
         
