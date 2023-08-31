@@ -127,6 +127,7 @@ const keyMap = {
     "*": "AddOperator('*')",
     "/": "AddOperator('/')",
     ".": "AddDecimal()",
+    ",": "AddDecimal()",
     "Enter": "Calculate()",
     "Backspace": "Backspace()",
     "Escape": "Clear()",

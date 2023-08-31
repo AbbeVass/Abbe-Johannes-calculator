@@ -40,8 +40,8 @@ document.addEventListener("keydown", function(event) {
     if (keyMap.hasOwnProperty(key)) {
         event.preventDefault();
 
-        // Make keypresses visual
-        document.getElementById("btn"+key).classList.add('active');
+        if (key === ",") { document.getElementById("btn.").classList.add('active'); }
+        else { document.getElementById("btn"+key).classList.add('active'); }
     }
 });
 
@@ -50,7 +50,8 @@ document.addEventListener("keydown", function(event) {
 document.addEventListener("keyup", function(event) {
     const key = event.key;
     if (keyMap.hasOwnProperty(key)) {
-        document.getElementById("btn"+key).classList.remove("active");
+        if (key === ",") { document.getElementById("btn.").classList.remove('active'); }
+        else { document.getElementById("btn"+key).classList.remove("active"); }
     }
 
     // Make sure shift keys are deactivated
