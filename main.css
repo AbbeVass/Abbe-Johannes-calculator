@@ -7,10 +7,6 @@ body {
     overflow: hidden;
 }
 
-.calculator {
-    transition: 0.5s;
-}
-
 .display-container {
     color: rgb(230, 230, 230);
     margin-top: 15px;
