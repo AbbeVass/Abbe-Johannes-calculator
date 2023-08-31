@@ -12,7 +12,7 @@ function AdjustFontSize() {
     }
     if ((display.clientWidth < containerWidth * 0.61
             && displayFontStage === 1)
-        || (display.clientWidth < containerWidth * 0.67
+        || (display.clientWidth < containerWidth * 0.66
             && displayFontStage === 2)) {
         displayFontStage --;
     }
