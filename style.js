@@ -45,10 +45,20 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
+
 // Deactivate buttons when the key is not pressed
 document.addEventListener("keyup", function(event) {
     const key = event.key;
     if (keyMap.hasOwnProperty(key)) {
         document.getElementById("btn"+key).classList.remove("active");
+    }
+
+    // Make sure shift keys are deactivated
+    else if (key === "Shift") {
+        const shiftKeys = ["*","/","(",")"];
+        for (i in shiftKeys) {
+            document.getElementById("btn"+shiftKeys[i]).classList.remove("active");
+            console.log(shiftKeys[i]);
+        }
     }
 });
