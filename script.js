@@ -59,20 +59,22 @@ function AddDecimal() {
 function Calculate() {
     const displayText = display.textContent.trim();
 
-    try {
-        const result = eval(displayText);
-        if (isNaN(result)) {
-            throw new Error("Division By Zero");
-        } else if (!isFinite(result)) {
-            throw new Error("Invalid Calculation");
-        }
-        display.textContent = result
-    } catch (error) {
-        // Handle errors here
-        if (error instanceof SyntaxError) {
-            display.textContent = "Syntax Error";
-        } else {
-            display.textContent = error.message;
+    if (displayText.length > 0) {
+        try {
+            const result = eval(displayText);
+            if (isNaN(result)) {
+                throw new Error("Division By Zero");
+            } else if (!isFinite(result)) {
+                throw new Error("Invalid Calculation");
+            }
+            display.textContent = result
+        } catch (error) {
+            // Handle errors here
+            if (error instanceof SyntaxError) {
+                display.textContent = "Syntax Error";
+            } else {
+                display.textContent = error.message;
+            }
         }
     }
 }
@@ -107,7 +109,6 @@ function ClearError() {
         display.textContent = "";
     }
 }
-
 
 
 const keyMap = {

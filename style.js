@@ -26,7 +26,7 @@ function AdjustFontSize() {
 function handleDisplayChange(mutationsList, observer) {
     for (const mutation of mutationsList) {
         if (mutation.type === 'childList') {
-            AdjustFontSize()
+            AdjustFontSize();
         }
     }
 }

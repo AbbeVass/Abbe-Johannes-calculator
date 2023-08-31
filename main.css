@@ -8,7 +8,6 @@ body {
 }
 
 .calculator {
-    width: 300px;
     transition: 0.5s;
 }
 
@@ -33,7 +32,7 @@ body {
 
 .btns-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 5px;
 }
 
@@ -44,6 +43,7 @@ body {
     font-size: 40px;
     font-weight: bold;
     height: 70px;
+    width: 70px;
     padding-top: 10px;
     padding-bottom: 10px;
     border-style: solid;
