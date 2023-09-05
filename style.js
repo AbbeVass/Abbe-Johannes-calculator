@@ -56,7 +56,7 @@ document.addEventListener("keyup", function(event) {
 
     // Make sure shift keys are deactivated
     else if (key === "Shift") {
-        const shiftKeys = ["*","/","(",")"];
+        const shiftKeys = ["*","/","(",")","^"];
         for (i in shiftKeys) {
             document.getElementById("btn"+shiftKeys[i]).classList.remove("active");
             console.log(shiftKeys[i]);
