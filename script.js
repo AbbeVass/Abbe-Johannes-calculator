@@ -144,7 +144,6 @@ document.addEventListener("keydown", function(event) {
         if (!(key === "Enter" && display.textContent === "Error")) {
             eval(calculatorFunction);
         }
-        
         event.preventDefault();
     }
 });
