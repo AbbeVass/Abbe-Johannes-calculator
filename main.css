@@ -75,3 +75,7 @@ body {
 .equal-btn.active {
     background-color: green;
 }
+
+.two-char {
+    font-size: 30px;
+}
