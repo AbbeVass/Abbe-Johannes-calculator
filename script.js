@@ -1,5 +1,6 @@
 let piAdded = false;
 const display = document.getElementById("display");
+var CopiedMemory
 
 function isDecimalAllowed() {
     const displayText = display.textContent.trim();
@@ -52,7 +53,7 @@ function AddDecimal() {
 
     if (isDecimalAllowed()) {
         ClearError();
-        document.getElementById("display").textContent += "."
+        display.textContent += "."
     }
 }
 
@@ -106,9 +107,22 @@ function ClearError() {
     const displayText = display.textContent.toLowerCase();
 
     if (errorMessages.some(errorMessage => displayText.includes(errorMessage.toLowerCase()))) {
-        display.textContent = "";
+        display.textContent = "";f
     }
 }
+
+function CopyMemory() {
+    CopiedMemory = display.textContent;
+}
+
+function PasteMemory() {
+    if (CopiedMemory != undefined) {
+        display.textContent += CopiedMemory;
+    } 
+}
+
+
+
 
 
 const keyMap = {
