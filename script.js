@@ -121,7 +121,9 @@ function PasteMemory() {
     } 
 }
 
-
+function FunnyBusiness() {
+    window.open("funny.mp4", "_blank");
+}
 
 
 
