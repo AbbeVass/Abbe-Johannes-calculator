@@ -117,7 +117,14 @@ function CopyMemory() {
 
 function PasteMemory() {
     if (CopiedMemory != undefined) {
-        display.textContent += CopiedMemory;
+        const displaytext = display.textContent.trim()
+        const lastChar = displaytext.charAt(displaytext.length - 1);
+        console.log(lastChar)
+        if (lastChar !== "/" && lastChar !== "*" && lastChar !== "-" && lastChar !== "+") {
+            display.textContent += CopiedMemory;
+        } else {
+            display.textContent += "(" + CopiedMemory.slice(0,-2) + ")"
+        }
     } 
 }
 
