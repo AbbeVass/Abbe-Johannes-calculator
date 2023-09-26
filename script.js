@@ -58,8 +58,7 @@ function AddDecimal() {
 }
 
 function Calculate() {
-    const displayText = display.textContent.trim();
-
+    const displayText = display.textContent.trim().replace("^", "**");
     if (displayText.length > 0) {
         try {
             const result = eval(displayText);
