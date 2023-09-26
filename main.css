@@ -4,7 +4,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 .display-container {
@@ -39,7 +38,7 @@ body {
     font-size: 40px;
     font-weight: bold;
     height: 70px;
-    width: 70px;
+    width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
     border-style: solid;
